@@ -12,4 +12,7 @@ import { Component } from "@angular/core";
     styleUrls: ['./word.component.css']
 })
 
-export class WordComponent {}
+export class WordComponent {
+    en = 'Dong Nguyen';
+    vi = 'Nguyễn Đông';
+}
