@@ -16,4 +16,8 @@ export class WordComponent {
     en = 'Dong Nguyen';
     vi = 'Nguyễn Đông';
     forgot = false;
+
+    toggleForgot() {
+        this.forgot = !this.forgot;
+    }
 }
