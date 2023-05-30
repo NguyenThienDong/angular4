@@ -1,3 +1,10 @@
 <input placeholder="Enter a username" [(ngModel)]="name" #txtUsername />
 <h3>Your name is {{ name }}</h3>
 <code>{{txtUsername.value | json}}</code>
+
+<!-- style binding and class binding -->
+<h3 [style.color]="isHightlight ? 'red' : 'black'">My name is Dong</h3>
+<!-- class: c1 -->
+<div [class]="isHightlight ? 'circle' : 'square'"></div>
+<!-- class: c2 -->
+<div [class.circle]="isHightlight" [class.square]="!isHightlight"></div>
