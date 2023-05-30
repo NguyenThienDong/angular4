@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class UserFormComponent {
   name = '';
-
-  showEvent(event: any) {
-    this.name = event.target.value;
-  }
 }
