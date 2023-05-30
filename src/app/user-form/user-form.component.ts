@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class UserFormComponent {
   name = '';
-  isHightlight = true;
+  isHightlight = false;
+  evenStyle = { color: 'red', fontSize: '40px'};
+  oddStyle = { color: 'black', fontSize: '20px'};
+  currentClass = { circle: this.isHightlight, square: !this.isHightlight };
 }
