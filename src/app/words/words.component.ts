@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class WordsComponent {
   newEn = '';
   newVn = '';
+  isShowForm = false;
   arrWords = [
     {id: 1, en: 'action', vi: 'hành động', memorized: true},
     {id: 2, en: 'actor', vi: 'diễn viên', memorized: false},
@@ -27,5 +28,6 @@ export class WordsComponent {
     });
     this.newEn = '';
     this.newVn = '';
+    this.isShowForm = false;
   }
 }
