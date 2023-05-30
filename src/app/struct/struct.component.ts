@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class StructComponent {
   isShow = false;
+  subjects = ['Angular', 'Nodejs', 'Reactjs']
 }

@@ -1,3 +1,8 @@
 <!-- ngIf = true thi hien dom, false thi xoa dom -->
 <p *ngIf="isShow">struct works!</p>
+<ul>
+    <li *ngFor="let subject of subjects">
+        Subject: {{subject}}
+    </li>
+</ul>
 <button (click)="isShow = !isShow">Toggle</button>
