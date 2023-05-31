@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import ChildComponent from './child.component';
 
 @Component({
   selector: 'app-parent',
   template: `
-    <h3>{{ value }}</h3>
-    <app-child (myClick)="changeValue($event)"></app-child>
+    <!-- <button (click)="child.value = child.value + 1">Add value of child (Cach 1)</button> -->
+    <!-- <app-child #child></app-child> -->
+    <button (click)="handleAddValueChild()">Add value of child (Cach 2 dung ViewChild)</button>
+    <app-child></app-child>
   `,
 })
 export default class ParentComponent {
-  value = 0;
+  @ViewChild(ChildComponent, { static: false}) childTwo: any;
 
-  changeValue(isAdd: boolean): void {
-    if (isAdd) {
-      this.value = this.value + 1;
-    } else {
-      this.value = this.value - 1;
-    }
+  handleAddValueChild() {
+    this.childTwo.value++;
   }
 }
