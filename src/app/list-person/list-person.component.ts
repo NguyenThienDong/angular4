@@ -11,4 +11,9 @@ export class ListPersonComponent {
     {name: 'Nam', age: 22},
     {name: 'Doai', age: 30}
   ]
+
+  handleRemovePerson(name: string) {
+    const index = this.arrPeople.findIndex(person => person.name === name);
+    this.arrPeople.splice(index, 1);
+  }
 }
