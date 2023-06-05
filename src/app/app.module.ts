@@ -18,6 +18,7 @@ import roundNumberPipe from './round.pipe';
 import IpComponent from './ip.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IpService } from './ip.service';
+import SignInComponent from './sign-in.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { IpService } from './ip.service';
     LearnPipesComponent,
     IpComponent,
     roundNumberPipe,
+    SignInComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [IpService],
