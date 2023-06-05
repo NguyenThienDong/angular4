@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import SignInService from './sign-in.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -21,9 +23,16 @@ import { NgForm } from '@angular/forms';
         Email is invalid
       </p>
       <br /><br />
-      <input placeholder="Password" ngModel name="password" minlength="6" required pattern="[a-z]*"/>
+      <input
+        placeholder="Password"
+        ngModel
+        name="password"
+        minlength="6"
+        required
+        pattern="[a-z]*"
+      />
       <br /><br />
-      <div ngModelGroup='subjects'>
+      <div ngModelGroup="subjects">
         <label><input type="checkbox" ngModel name="nodejs" />NodeJs</label>
         <br /><br />
         <label><input type="checkbox" ngModel name="php" />PHP</label>
@@ -36,9 +45,14 @@ import { NgForm } from '@angular/forms';
     </form>
     <p>{{ formSignIn.value | json }}</p>
   `,
+  providers: [SignInService],
 })
 export default class SignInComponent {
+  constructor(private signInService: SignInService) {}
   handleSubmit(formValue: NgForm) {
-    console.log(formValue);
+    this.signInService
+      .sendPost(formValue.value)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   }
 }
